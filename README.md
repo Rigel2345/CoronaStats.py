@@ -1,1 +1,1 @@
-# ohgodwhy
+The general idea was we would scrape the data off of a website put it into csv then put them in streamlit but this didn't go as plan so we took the data off of the csv and hard coded it into streamlit
