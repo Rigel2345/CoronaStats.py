@@ -1,15 +1,42 @@
+from os import read
 import pandas as pd
 import numpy as np
 import streamlit as st
+#import readcsv
 
-st.write("Table time")
-st.write(pd.DataFrame({
-    'first column' : [1, 2, 3, 4],
-    'second column' : [10, 20, 30, 40],
-}))
+al_name = "Alabama"
+al_daily_avg = 2806
+al_cases_100k = 57
+al_cases_per_14 = 26
 
-chart_data = pd.DataFrame(
-    np.random.randn(20,3),
-    columns=['A','B','C'])
+mad_name = "Madison"
+mad_daily_avg = 195
+mad_cases_100k = 52
+mad_cases_per_14k = 19
 
-st.line_chart(chart_data)
+jack_name = "Jackson"
+jack_daily_avg = 39
+jack_cases_100k = 75
+jack_cases_per_14 = 1
+
+limestone_name = "Limestone"
+limestone_daily_avg = 64
+limestone_cases_100k = 64
+limestone_cases_per_14 = 16
+
+st.title("Covid Stats for your area")
+
+row1_1, row1_2, row1_3= st.columns((3))
+
+with row1_1:
+    st.markdown("**Daily Avg**")
+    st.bar_chart([2806, 195, 39, 64])
+
+with row1_2:
+    st.markdown("**Cases per 100k people**")
+    st.bar_chart([57, 52, 75, 64]
+    )
+
+with row1_3:
+    st.markdown("**Change in cases**")
+    st.bar_chart([26, 19, 1, 16])
